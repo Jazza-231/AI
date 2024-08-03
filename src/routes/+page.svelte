@@ -69,7 +69,6 @@
 </script>
 
 <main>
-  <h1>Image Generator</h1>
   <div class="input-container">
     <input
       class="prompt"
@@ -94,26 +93,22 @@
         <div class="loading" class:hidden={!loading[i]}>
           Loading<span class="dots"></span>
         </div>
-        <img
-          {src}
-          alt={src}
-          on:load={() => handleImageLoad(i)}
-          class:hidden={loading[i]}
-        />
+        <a
+          href={`/${src.split("/")[src.split("/").length - 1].split(`-${i}`)[0]}/${i}`}
+        >
+          <img
+            {src}
+            alt={src}
+            on:load={() => handleImageLoad(i)}
+            class:hidden={loading[i]}
+          /></a
+        >
       </div>
     {/each}
   </div>
 </main>
 
 <style lang="scss">
-  :global(body) {
-    background-color: #121212;
-    color: #ffffff;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-
   main {
     padding: 2rem;
     text-align: center;
