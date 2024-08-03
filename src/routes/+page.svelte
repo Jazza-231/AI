@@ -20,6 +20,7 @@
     }
 
     updateURLParams();
+    checkImagesLoaded();
   }
 
   function handleKeyPress(event: KeyboardEvent) {
