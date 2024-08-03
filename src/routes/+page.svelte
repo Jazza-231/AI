@@ -11,7 +11,7 @@
   function generate() {
     if (!variations) return;
 
-    const trimmedPrompt = prompt.trim().replace(/\s+/g, "-");
+    const trimmedPrompt = prompt.trim().replace(/\s+/g, "-").toLowerCase();
 
     srcs = [];
     loading = new Array(variations).fill(true);
